@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "SupplierList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SupplierList</h2>
+
+@Html.Action("CountriesList", new { countryData = new List<string>() { "Malaysia", "Hongkong" } });
+
