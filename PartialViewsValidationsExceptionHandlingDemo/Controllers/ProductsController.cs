@@ -12,9 +12,10 @@ namespace PartialViewsValidationsExceptionHandlingDemo.Controllers
 
         //[HandleError]
 
-        //[HandleError(ExceptionType = typeof(InvalidOperationException), View = "InvalidError")]
+
+        [HandleError(ExceptionType =typeof(InvalidOperationException),View ="~/Views/Shared/InvalidOperation.cshtml")]
         //[HandleError(ExceptionType = typeof(Exception), View = "Error")]
-        [MyException]
+        //[MyException]
         public ActionResult Index()
         {
             int rate = 0;
@@ -48,7 +49,7 @@ namespace PartialViewsValidationsExceptionHandlingDemo.Controllers
         //[HandleError()]
         //[HandleError(ExceptionType =typeof(InvalidCastException),View ="Error1")]
         //[HandleError(ExceptionType = typeof(DivideByZeroException),View ="Error")]
-        public ActionResult Divide()
+        public ViewResult Divide()
         {
             //int i = 1665656756;
             //int j = 1;
@@ -62,6 +63,9 @@ namespace PartialViewsValidationsExceptionHandlingDemo.Controllers
             ViewBag.ans = k;
             return View();
         }
+
+
+        //public AcceptResult  
 
     }
 }

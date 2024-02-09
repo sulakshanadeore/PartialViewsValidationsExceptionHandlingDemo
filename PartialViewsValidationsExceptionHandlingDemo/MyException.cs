@@ -18,7 +18,7 @@ namespace PartialViewsValidationsExceptionHandlingDemo
             filterContext.ExceptionHandled = true;
             filterContext.Result = new ViewResult()
             {
-                ViewName = "InvalidError"
+                ViewName = "~/Views/Shared/InvalidOperation.cshtml"
             };
         }
     }

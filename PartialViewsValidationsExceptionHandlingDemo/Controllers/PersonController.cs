@@ -34,5 +34,28 @@ namespace PartialViewsValidationsExceptionHandlingDemo.Controllers
             return View();
         }
 
+        [NonAction]
+        public List<PersonModel> GetList()
+        {
+            List<PersonModel> persons = new List<PersonModel>() {
+            new PersonModel{ Personid=1,FirstName="Anil"},
+            new PersonModel{ Personid=2,FirstName="Amit"},
+            new PersonModel{ Personid=3,FirstName="Sumit"}
+
+            };
+            return persons;
+        }
+
+
+        public ActionResult ShowPersonData()
+        {
+            // var person = new PersonModel() { Personid=1,FirstName="Amit"};
+
+            List<PersonModel> people=GetList();
+            return Json(people, JsonRequestBehavior.DenyGet);
+        }
+
+
+
     }
 }
